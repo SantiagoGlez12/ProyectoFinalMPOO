@@ -93,6 +93,6 @@ public String getEstado(){
 @Override
 
 public String toString(){
-    return "Direccion Calle: "+Calle+" NumeroExterior: "+NumeroExterior+" Municipio: "+Municipio+" CodigoPostal: "+CoPostal+" Estado: "+Estado;
+    return "Calle: "+Calle+" NumeroExterior: "+NumeroExterior+" Municipio: "+Municipio+" CodigoPostal: "+CoPostal+" Estado: "+Estado;
   }
 }

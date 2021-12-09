@@ -1,3 +1,4 @@
+package Vista;
 import Controlador.Tabla;
 import Controlador.Trabajador;
 import java.util.Scanner;  

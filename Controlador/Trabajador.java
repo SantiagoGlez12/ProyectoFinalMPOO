@@ -123,10 +123,12 @@ public class Trabajador{
   }
   
   public void setImpresion(){
-    if(servicio == 1){
+    if(numProyectos == 1){
     impresion = nombre+","+apellido1+","+apellido2+","+numTrab+","+edad+","+servicio+","+direccion.toString()+","+numProyectos+","+proyectoV;}
     else if(numProyectos == 2){
       impresion = nombre+","+apellido1+","+apellido2+","+numTrab+","+edad+","+servicio+","+direccion.toString()+","+numProyectos+","+proyectoG+proyectoV;}
+    else if(numProyectos == 0){
+    impresion = nombre+","+apellido1+","+apellido2+","+numTrab+","+edad+","+servicio+","+direccion.toString()+",0,NO TIENE PROYECTOS";}
     else{
       impresion = nombre+","+apellido1+","+apellido2+","+numTrab+","+edad+","+servicio+","+direccion.toString()+","+numProyectos+","+proyectoH+proyectoG+proyectoV;}
     }
@@ -138,12 +140,15 @@ public class Trabajador{
   }
 
   public void imprimirTrabajador(){
-    if(servicio == 1){
-      System.out.println("Nombre: "+nombre+" "+apellido1+" "+apellido2+"\nNumero de trabajador: "+numTrab+"\nEdad: "+edad+"\nAños de Servicio: "+servicio+"\n"+direccion.toString()+"\nNumero de Proyectos:"+numProyectos+"\nUltimos proyectos\n"+proyectoV);
+    if(numProyectos == 0){
+      System.out.println("Nombre: "+nombre+" "+apellido1+" "+apellido2+"\nNumero de trabajador: "+numTrab+"\nEdad: "+edad+"\nAños de Servicio: "+servicio+"\nDireccion:\n"+direccion.toString()+"\nNueva contratacion, NO HAY PROYECTOS");
+    }
+    else if(numProyectos == 1){
+      System.out.println("Nombre: "+nombre+" "+apellido1+" "+apellido2+"\nNumero de trabajador: "+numTrab+"\nEdad: "+edad+"\nAños de Servicio: "+servicio+"\nDireccion:\n"+direccion.toString()+"\nNumero de Proyectos:"+numProyectos+"\nUltimos proyectos:\n"+proyectoV);
     }else if(numProyectos == 2){
-      System.out.println("Nombre: "+nombre+" "+apellido1+" "+apellido2+"\nNumero de trabajador: "+numTrab+"\nEdad: "+edad+"\nAños de Servicio: "+servicio+"\n"+direccion.toString()+"\nNumero de Proyectos:"+numProyectos+"\nUltimos proyectos\n"+proyectoG+"\n"+proyectoV);
+      System.out.println("Nombre: "+nombre+" "+apellido1+" "+apellido2+"\nNumero de trabajador: "+numTrab+"\nEdad: "+edad+"\nAños de Servicio: "+servicio+"\nDireccion:\n"+direccion.toString()+"\nNumero de Proyectos:"+numProyectos+"\nUltimos proyectos:\n"+proyectoG+"\n"+proyectoV);
     }
     else{
-      System.out.println("Nombre: "+nombre+" "+apellido1+" "+apellido2+"\nNumero de trabajador: "+numTrab+"\nEdad: "+edad+"\nAños de Servicio: "+servicio+"\n"+direccion.toString()+"\nNumero de Proyectos:"+numProyectos+"\nUltimos proyectos\n "+proyectoH+"\n"+proyectoG+"\n Vigentes\n"+proyectoV);
+      System.out.println("Nombre: "+nombre+" "+apellido1+" "+apellido2+"\nNumero de trabajador: "+numTrab+"\nEdad: "+edad+"\nAños de Servicio: "+servicio+"\nDireccion:\n"+direccion.toString()+"\nNumero de Proyectos:"+numProyectos+"\nUltimos proyectos\n "+proyectoH+"\n"+proyectoG+"\n Vigentes\n"+proyectoV);
     }}
 }

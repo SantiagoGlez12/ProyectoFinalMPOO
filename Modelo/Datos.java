@@ -69,13 +69,13 @@ public class Datos{
     int numero = (int) (Math.random()*50);
     int aux = edad - numero;
     while (aux < 18){
-      numero = (int) (Math.random()*50); 
+      numero = (int) (Math.random()*50);
+      /*while(numero==0){
+        numero = (int) (Math.random()*50);
+      }*/ 
       aux = edad - numero;
-      if(numero==0){
-        numero=1;
       }
-    } 
-    servicio = numero;
+      servicio = numero;
     }  
 
   public String getNumTrabajador(){
@@ -130,7 +130,10 @@ public class Datos{
     else{
     int numero = (int) (Math.random()*50);
       while (numero > servicio){
-        numero = (int) (Math.random()*50);; 
+        numero = (int) (Math.random()*50);
+        if (numero == 0){
+          numero = (int) (Math.random()*50);
+        }
     } 
     numProyectos = numero;}
   }

@@ -8,7 +8,7 @@ import Controlador.Trabajador;
 import Modelo.Direccion;
 import java.lang.NullPointerException;
 public class Tabla{
-  public int NumTrabajadores=5;
+  public int NumTrabajadores=101;
   public Trabajador[] trabajadores = new Trabajador[NumTrabajadores];
   
   public Tabla(){
