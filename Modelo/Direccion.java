@@ -6,15 +6,14 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 import java.lang.NullPointerException;
 public class Direccion{
-  
+  //Atributos
   private String Calle;
   private String NumeroExterior;
   private String Municipio;
   private String CoPostal;
   private String Estado;
-
+  //Constructores
   public Direccion(String Calle, String NumeroExterior, String Municipio, String CoPostal, String Estado){
-    //Modificar las variables en minusculas
     this.Calle = Calle;
     this.NumeroExterior = NumeroExterior;
     this.Municipio = Municipio;
@@ -24,14 +23,14 @@ public class Direccion{
 
   public Direccion(int Elemento){
     try{
-      FileReader tabla = new FileReader("Direcciones.csv");
+      FileReader tabla = new FileReader("Direcciones.csv"); //Llamamos el documento *.csv que contiene direcciones
       BufferedReader buffer = new BufferedReader(tabla);
       String linea =buffer.readLine();
       int count = 0,i=0;
-      while(linea!=null){
+      while(linea!=null){ //Usamos el while para que leamos hasta encontrar un null
        if(i==Elemento){
         StringTokenizer tokenizador= new StringTokenizer(linea,",");
-        while(tokenizador.hasMoreTokens()){
+        while(tokenizador.hasMoreTokens()){ // utilizamos el while para asignar los valores a las variables
           String aux= tokenizador.nextToken();
           if(count==0)
             Calle=aux;
@@ -59,7 +58,8 @@ public class Direccion{
     }
     
   }
-
+//Metodos
+//seccion set-get para la formacion de las direcciones
 public void setCalle(String Calle){
   this.Calle=Calle;
 }
@@ -90,8 +90,8 @@ public String getCoPostal(){
 public String getEstado(){
   return Estado;
 }
+//Concatenaos todo en el Override
 @Override
-
 public String toString(){
     return "Calle: "+Calle+" NumeroExterior: "+NumeroExterior+" Municipio: "+Municipio+" CodigoPostal: "+CoPostal+" Estado: "+Estado;
   }

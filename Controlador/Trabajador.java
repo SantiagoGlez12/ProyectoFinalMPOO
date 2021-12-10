@@ -1,7 +1,8 @@
 package Controlador;
-import Modelo.Datos;
-import Modelo.Direccion;
+import Modelo.Datos;         //Importamos a Datos de su paquete
+import Modelo.Direccion;     //Importamos a Direccion de su paquete
 public class Trabajador{
+  //Atributos
   private String nombre;
   private String apellido1;
   private String apellido2;
@@ -15,10 +16,12 @@ public class Trabajador{
   private String impresion;
   private int El = 0;  
   Datos dato = new Datos();
-  private int dir = (int) (Math.random()*30);
-  Direccion direccion = new Direccion(dir);
+  private int dir = (int) (Math.random()*300); // Inicializamos una variable random para seleccionar direcciones 
+  Direccion direccion = new Direccion(dir); // Inicializamos a la direccion
 
+  //Constructores
   public Trabajador(int El){
+    //Inicializamos los seters y los geters para obtener los valores.
     this.El = El;
     dato.setNombre();
     nombre = dato.getNombre();
@@ -42,6 +45,7 @@ public class Trabajador{
     proyectoV = dato.getProyectoV();
   }
   
+  //Metodos
   public String getNombre(){
     return nombre;
   }
@@ -122,33 +126,33 @@ public class Trabajador{
     return impresion;
   }
   
-  public void setImpresion(){
-    if(numProyectos == 1){
+  public void setImpresion(){ // Set para dar valor a la la variable impresion que nos servira para imprimir en *.csv
+    if(numProyectos == 1){ //Restriccion por si el numero de proyectos es 1
     impresion = nombre+","+apellido1+","+apellido2+","+numTrab+","+edad+","+servicio+","+direccion.toString()+","+numProyectos+","+proyectoV;}
-    else if(numProyectos == 2){
+    else if(numProyectos == 2){ //Restriccion por si el numero de proyectos es 2
       impresion = nombre+","+apellido1+","+apellido2+","+numTrab+","+edad+","+servicio+","+direccion.toString()+","+numProyectos+","+proyectoG+proyectoV;}
-    else if(numProyectos == 0){
+    else if(numProyectos == 0){ //Restriccion por si el numero de proyectos es 0
     impresion = nombre+","+apellido1+","+apellido2+","+numTrab+","+edad+","+servicio+","+direccion.toString()+",0,NO TIENE PROYECTOS";}
-    else{
+    else{ //Formato de la impresion estandart para el archivo  *.csv
       impresion = nombre+","+apellido1+","+apellido2+","+numTrab+","+edad+","+servicio+","+direccion.toString()+","+numProyectos+","+proyectoH+proyectoG+proyectoV;}
     }
 
-  public String impresionFinal(){
+  public String impresionFinal(){ //Metodo para dar el valor de impresion
     setImpresion();
     impresion = getImpresion();
     return impresion;
   }
 
-  public void imprimirTrabajador(){
-    if(numProyectos == 0){
+  public void imprimirTrabajador(){ //Metodo para la impresion del trabajador en terminal
+    if(numProyectos == 0){ //Restriccion por si el numero de proyectos es 0
       System.out.println("Nombre: "+nombre+" "+apellido1+" "+apellido2+"\nNumero de trabajador: "+numTrab+"\nEdad: "+edad+"\nAños de Servicio: "+servicio+"\nDireccion:\n"+direccion.toString()+"\nNueva contratacion, NO HAY PROYECTOS");
     }
-    else if(numProyectos == 1){
+    else if(numProyectos == 1){ //Restriccion por si el numero de proyectos es 0
       System.out.println("Nombre: "+nombre+" "+apellido1+" "+apellido2+"\nNumero de trabajador: "+numTrab+"\nEdad: "+edad+"\nAños de Servicio: "+servicio+"\nDireccion:\n"+direccion.toString()+"\nNumero de Proyectos:"+numProyectos+"\nUltimos proyectos:\n"+proyectoV);
-    }else if(numProyectos == 2){
+    }else if(numProyectos == 2){ //Restriccion por si el numero de proyectos es 0
       System.out.println("Nombre: "+nombre+" "+apellido1+" "+apellido2+"\nNumero de trabajador: "+numTrab+"\nEdad: "+edad+"\nAños de Servicio: "+servicio+"\nDireccion:\n"+direccion.toString()+"\nNumero de Proyectos:"+numProyectos+"\nUltimos proyectos:\n"+proyectoG+"\n"+proyectoV);
     }
-    else{
+    else{ //Formato de la impresion estandart para la terminal
       System.out.println("Nombre: "+nombre+" "+apellido1+" "+apellido2+"\nNumero de trabajador: "+numTrab+"\nEdad: "+edad+"\nAños de Servicio: "+servicio+"\nDireccion:\n"+direccion.toString()+"\nNumero de Proyectos:"+numProyectos+"\nUltimos proyectos\n "+proyectoH+"\n"+proyectoG+"\n Vigentes\n"+proyectoV);
     }}
 }

@@ -1,8 +1,7 @@
 import Vista.Menu;
-class Main {
+public class Main {
   public static void main(String[] args) {
-    Menu menu = new Menu();
-    menu.imprimirMenu();
-
+    Menu menu = new Menu(); //Creaccion de menu
+    menu.imprimirMenu(); //Lamamos a imprimir el menu
   }
 }
