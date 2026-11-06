@@ -24,7 +24,7 @@ These are academic implementations; the menu includes a fixed demonstration pass
 | `Controlador/` | Employee and table operations. |
 | `Direcciones.csv` | Address data read from the working directory. |
 | `TablaTrabajadores.csv` | Included example export; running the export can overwrite it. |
-| Companion resources | Supporting name, address, and project files remain in `ArchivosProyectoFinalMPOO`; they have not been copied into this repository. |
+| `resources/reference/` | Five supporting name, address, and project files consolidated from the companion repository. |
 | `docs/` | Existing generated documentation and consolidation notes. |
 
 ## Compile and run
@@ -36,16 +36,16 @@ javac -encoding UTF-8 -d build Main.java Modelo/*.java Vista/*.java Controlador/
 java -cp build Main
 ```
 
-Keep the working directory at the repository root so the program can find `Direcciones.csv`. The companion reference files do not replace the root runtime CSV.
+Keep the working directory at the repository root so the program can find `Direcciones.csv`. Supporting reference files are retained for context; they do not replace the root runtime CSV.
 
-**Validation:** the repository structure and file references were reviewed. Compilation and interactive behavior have not been verified in the current environment, which has no JDK installed.
+**Validation:** source and resource integrity was checked during consolidation. Compilation and interactive behavior have not been verified in the current environment, which has no JDK installed.
 
 ## Academic context
 
 The sample records are fictional or based on public example material, as confirmed by the author. Original Spanish class names and comments are preserved to reflect the work as developed.
 
-The companion resources remain in their original repository pending publication approval. The Java code is unchanged. Existing compiled binaries and generated documentation remain historical artifacts; the commands above build from source rather than relying on those binaries.
+The companion resources have been copied into this repository without changing their contents. The Java code is unchanged. Existing compiled binaries and generated documentation remain historical artifacts; the commands above build from source rather than relying on those binaries.
 
-The companion repository is `SantiagoGlez12/ArchivosProyectoFinalMPOO`. Related introductory exercises are available in [Java university labs](https://github.com/SantiagoGlez12/java-oop-university-labs).
+See the [consolidation record](docs/consolidation.md) for provenance. Related introductory exercises are available in [Java university labs](https://github.com/SantiagoGlez12/java-oop-university-labs).
 
 **Status:** Historical university coursework.
