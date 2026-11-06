@@ -1,40 +1,51 @@
-# Object-Oriented Programming — Final University Project
+# Employee Records — Java University Project
 
-> Archived academic project developed for an Object-Oriented Programming course.
+A menu-driven console application developed during my Object-Oriented Programming coursework at UNAM. It models fictional employees, addresses, years of service, and project assignments.
 
-## Overview
+**Java · OOP · Console application · CSV · Model–View–Controller organization**
 
-This repository contains a Java project with a menu-based entry point and an organization into model, view, and controller directories. It is preserved as part of my undergraduate software development coursework.
+## What it demonstrates
 
-## Repository structure
+- Employee and address models, with generated sample attributes.
+- Separate human-resources and employee menu paths.
+- Viewing and modifying employee records.
+- CSV export through the table controller.
+- Java packages organized into model, view, and controller responsibilities.
+
+These are academic implementations; the menu includes a fixed demonstration password (`123`), not production authentication.
+
+## Repository guide
 
 | Path | Purpose |
 | --- | --- |
-| `Main.java` | Application entry point; initializes and displays the menu. |
-| `Modelo/` | Model-related source files. |
-| `Vista/` | View-related source files. |
-| `Controlador/` | Controller-related source files. |
-| `Direcciones.csv`, `TablaTrabajadores.csv` | Data files included with the original project. |
-| `docs/` | Original project documentation and supporting files. |
+| `Main.java` | Starts the console menu. |
+| `Modelo/` | Data and address models. |
+| `Vista/Menu.java` | Console interaction and menu flow. |
+| `Controlador/` | Employee and table operations. |
+| `Direcciones.csv` | Address data read from the working directory. |
+| `TablaTrabajadores.csv` | Included example export; running the export can overwrite it. |
+| Companion resources | Supporting name, address, and project files remain in `ArchivosProyectoFinalMPOO`; they have not been copied into this repository. |
+| `docs/` | Existing generated documentation and consolidation notes. |
 
-## Technologies and concepts
+## Compile and run
 
-- Java
-- Object-oriented programming
-- Separation of model, view, and controller responsibilities
-- File-based data resources
+Install a JDK and run these commands from the repository root:
 
-## Project status
+```bash
+javac -encoding UTF-8 -d build Main.java Modelo/*.java Vista/*.java Controlador/*.java
+java -cp build Main
+```
 
-**Historical university coursework.** The original code and project files are intentionally preserved; this README provides orientation without claiming that the project has been recently tested or modernized.
+Keep the working directory at the repository root so the program can find `Direcciones.csv`. The companion reference files do not replace the root runtime CSV.
 
-## Notes for future improvements
+**Validation:** the repository structure and file references were reviewed. Compilation and interactive behavior have not been verified in the current environment, which has no JDK installed.
 
-- Review the original build and execution instructions.
-- Identify source files and generated `.class` / `.jar` artifacts.
-- Check included datasets for reuse permissions and personally identifying information before any consolidation into a new public portfolio.
-- Add verified screenshots or a demo once the application has been run and checked.
+## Academic context
 
----
+The sample records are fictional or based on public example material, as confirmed by the author. Original Spanish class names and comments are preserved to reflect the work as developed.
 
-**Status:** Historical coursework · **Language:** Java
+The companion resources remain in their original repository pending publication approval. The Java code is unchanged. Existing compiled binaries and generated documentation remain historical artifacts; the commands above build from source rather than relying on those binaries.
+
+The companion repository is `SantiagoGlez12/ArchivosProyectoFinalMPOO`. Related introductory exercises are available in [Java university labs](https://github.com/SantiagoGlez12/java-oop-university-labs).
+
+**Status:** Historical university coursework.
