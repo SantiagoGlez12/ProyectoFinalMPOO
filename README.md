@@ -38,7 +38,7 @@ java -cp build Main
 
 Keep the working directory at the repository root so the program can find `Direcciones.csv`. Supporting reference files are retained for context; they do not replace the root runtime CSV.
 
-**Validation:** source and resource integrity was checked during consolidation. Compilation and interactive behavior have not been verified in the current environment, which has no JDK installed.
+**Validation:** source and resource integrity was checked during consolidation. Automated compilation using Temurin JDK 17 succeeded in GitHub Actions on 7 November 2026. Interactive menus, CSV output and runtime behavior have not been tested.
 
 ## Academic context
 
